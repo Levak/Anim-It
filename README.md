@@ -31,20 +31,18 @@ Follow these simple rules :
    `timer.update(true)`.
 
 3. Make your classes you want to animate **inherit from `Object`** :
-```
+```lua
 AnimatedRectangle = class(Object)
 ```
-
 4. Call Object constructor with the properties you wish to animate :
-```
+```lua
 function AnimatedRectangle:init(x, y, w, h)
          Object.init(self, {x = x, y = y})
          self.w, self.h = w, h
 end
 ```
-
 5. Animate it !
-```
+```lua
 local my = AnimatedRectangle(10, 20, 30, 40)
 my:Animate({x = 20}, 100)
   :Animate({x = 200, y = 200}, 100)
