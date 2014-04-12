@@ -36,6 +36,7 @@ Follow these simple rules :
    AnimatedRectangle = class(Object)
    ```
 4. Call Object constructor with the properties you wish to animate :
+
    ```lua
    function AnimatedRectangle:init(x, y, w, h)
          Object.init(self, {x = x, y = y})
@@ -43,6 +44,7 @@ Follow these simple rules :
    end
    ```
 5. Animate it !
+
    ```lua
    local my = AnimatedRectangle(10, 20, 30, 40)
    my:Animate({x = 20}, 100)
