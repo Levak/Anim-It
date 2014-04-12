@@ -31,29 +31,30 @@ Follow these simple rules :
    `timer.update(true)`.
 
 3. Make your classes you want to animate **inherit from `Object`** :
-```lua
-AnimatedRectangle = class(Object)
-```
+
+   ```lua
+   AnimatedRectangle = class(Object)
+   ```
 4. Call Object constructor with the properties you wish to animate :
-```lua
-function AnimatedRectangle:init(x, y, w, h)
+   ```lua
+   function AnimatedRectangle:init(x, y, w, h)
          Object.init(self, {x = x, y = y})
          self.w, self.h = w, h
-end
-```
+   end
+   ```
 5. Animate it !
-```lua
-local my = AnimatedRectangle(10, 20, 30, 40)
-my:Animate({x = 20}, 100)
-  :Animate({x = 200, y = 200}, 100)
-  :Delay(300)
-  :Animate({x = 10, y = 20}, 200,
-    function(self)
-      print("The end !")
-    end)
-```
+   ```lua
+   local my = AnimatedRectangle(10, 20, 30, 40)
+   my:Animate({x = 20}, 100)
+     :Animate({x = 200, y = 200}, 100)
+     :Delay(300)
+     :Animate({x = 10, y = 20}, 200,
+       function(self)
+         print("The end !")
+       end)
+  ```
 
-## Projects that uses Anim-It :
+## Projects using Anim-It
 
 * [EEPro-for-Nspire](https://github.com/adriweb/EEPro-for-Nspire)
 * [2048](http://ti-pla.net/a42651)
