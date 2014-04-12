@@ -42,6 +42,12 @@ end
 ----- Internals -----
 ---------------------
 
+if platform.hw then
+   timer.multiplier = platform.hw() < 4 and 4 or 1
+else
+   timer.multiplier = 4
+end
+
 timer.tasks = {}
 function timer.addTask(object, queueID, task)
    table.insert(timer.tasks, {object, task, queueID})
